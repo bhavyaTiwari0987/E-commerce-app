@@ -4,7 +4,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Tech Stack
 Redux Toolkit
-Re
+Google Firebase
+React-Router-DOM
+React-Stripe-Chekout
+AXIOS
+Express
+Tailwind
+React Icons
+React Tostify
 
 ## Available Scripts
 
