@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from "react";
 import { MdOutlineClose } from "react-icons/md";
 import { useSelector } from "react-redux";
-import { increaseQuantity, decreaseQuantity , deleteItem } from "../redux/bazarSlice";
+import { increaseQuantity, decreaseQuantity , deleteItem , resetCart } from "../redux/bazarSlice";
 import { useDispatch } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import { Link } from "react-router-dom";
+import {HiOutlineArrowLeft} from 'react-icons/hi';
+
 
 
 const CartItem = () => {
@@ -12,8 +15,9 @@ const CartItem = () => {
 
   return (
     <div className="w-2/3 pr-10">
-      <div className="w-full">
+      <div className="w-full flex">
         <h2 className="font-titleFont text-2xl">shopping cart</h2>
+        
       </div>
       <div>
         {productData.map((item) => (
@@ -22,7 +26,13 @@ const CartItem = () => {
             className="flex items-center justify-between mt-6"
           >
             <div className="flex items-center gap-2">
-              <MdOutlineClose onClick={() => {dispatch(deleteItem({_id: item._id}))}} className="text-xl text-grey-600 hover:text-red-600 cursor-pointer duration-300" />
+              <MdOutlineClose onClick={() => 
+                dispatch(
+                  deleteItem({
+                    _id: item._id
+                    })
+                    ) & toast.error(`${item.title} is deleted`)
+                    } className="text-xl text-grey-600 hover:text-red-600 cursor-pointer duration-300" />
               <img
                 className="w-20 h-20 object-cover"
                 src={item.image}
@@ -63,6 +73,27 @@ const CartItem = () => {
           </div>
         ))}
       </div>
+      <Link to="/">
+        <button className="flex gap-1 justify-center items-center text-gray-400 hover:text-black duration-300 mt-24">
+        <HiOutlineArrowLeft/>
+        go shopping
+        </button>
+      </Link>
+        
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      {/* Same as */}
+      <ToastContainer />
     </div>
   );
 };

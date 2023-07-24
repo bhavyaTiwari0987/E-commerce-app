@@ -1,5 +1,6 @@
 import Home from './pages/Home';
 import Cart from './pages/Cart';
+import Login from './pages/Login';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Product from './components/ProductDetails';
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/product/:id",
         element: <Product/>
+      },
+      {
+        path: "/login",
+        element: <Login/>
       }
     ]
   }
