@@ -3,14 +3,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Tech Stack
-Redux Toolkit
-Google Firebase
-React-Router-DOM
-React-Stripe-Chekout
-AXIOS
-Express
-Tailwind
-React Icons
+React.js,
+Redux Toolkit,
+Google Firebase,
+React-Router-DOM,
+React-Stripe-Chekout,
+AXIOS,
+Express,
+Tailwind,
+React Icons,
 React Tostify
 Express
 
